@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Attack Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('https://th.bing.com/th?id=OIP.dGNsuoo1cxFFI3Jx81eotAHaFj&w=288&h=216&c=8&rs=1&qlt=90&r=0&o=6&dpr=1.6&pid=3.1&rm=2'); 
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto; 
+            border-collapse: collapse;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #fff;
+            text-align: center;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="number"], select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: none;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Heart Attack Prediction Models</h1>
+    <table>
+        <tr>
+            <th>Model</th>
+            <th>Accuracy</th>
+        </tr>
+        {% for model, accuracy in model_accuracies.items() %}
+        <tr>
+            <td>{{ model }}</td>
+            <td>{{ accuracy }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    
+    <h2>Predictions:</h2>
+     <table>
+        <tr>
+            <td>{{ prediction }}</td>
+        </tr>
+    </table>
+</body>
+</html>
